@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:santoyo/galeriadejoyas.dart';
 
 void main() {
   runApp(MascotasApp());
@@ -9,56 +10,10 @@ class MascotasApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'App para Joyeria',
+        title: 'App para Joyeria V2',
         theme: ThemeData(
-          primarySwatch: Colors.orangeAccent,
+          primarySwatch: Colors.green,
         ),
         home: PaginaInicial());
   } //Widget
 } //clase MascotasApp Widgets sin estado
-
-class PaginaInicial extends StatefulWidget {
-  PaginaInicial({Key? key}) : super(key: key);
-  @override
-  _PaginaInicialState createState() => _PaginaInicialState();
-} //Widgets con estado
-
-class _PaginaInicialState extends State<PaginaInicial> {
-  List<String> images = [
-    "assets/images/anillo.jpg",
-    "assets/images/arete.jpg",
-    "assets/images/collar.jpg",
-    "assets/images/anillo.jpg",
-    "assets/images/arete.jpg",
-    "assets/images/collar.jpg",
-    "assets/images/anillo.jpg",
-    "assets/images/arete.jpg",
-    "assets/images/collar.jpg",
-    "assets/images/anillo.jpg",
-    "assets/images/arete.jpg",
-    "assets/images/collar.jpg",
-  ];
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text("Tutorial GridView"),
-        ),
-        body: GridView.custom(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-          ),
-          childrenDelegate: SliverChildBuilderDelegate(
-            (BuildContext, index) {
-              return Image.asset(
-                images[index],
-                fit: BoxFit.cover,
-              );
-            },
-            childCount: 12,
-          ),
-          padding: EdgeInsets.all(10),
-          shrinkWrap: true,
-        ));
-  }
-}
